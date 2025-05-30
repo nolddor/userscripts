@@ -4,7 +4,7 @@
 // @namespace     https://github.com/nolddor
 // @match         https://chatgpt.com/*
 // @grant         none
-// @version       1.0.0
+// @version       1.1.0
 // @author        Jack Nolddor
 // @description   Dismiss modal window that appears when you try to use ChatGPT without being logged in.
 // @license       MIT
@@ -19,4 +19,5 @@
     return;
   }
   sessionStorage.setItem('oai/apps/noAuthHasDismissedSoftRateLimitModal', 'true');
+  sessionStorage.setItem('has-dismissed-welcome-back-modal', 'true');
 })();
