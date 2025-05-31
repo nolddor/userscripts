@@ -1,0 +1,24 @@
+{
+  "name": "@nolddor/userscripts",
+  "version": "1.0.0",
+  "description": "A personal collection of userscripts I use across the internet. Each script is designed to automate, enhance, or simplify specific web experiences according to my own needs.",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolddor/userscripts.git"
+  },
+  "keywords": [],
+  "author": "Jack Nolddor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolddor/userscripts/issues"
+  },
+  "homepage": "https://github.com/nolddor/userscripts#readme",
+  "devDependencies": {
+    "eslint": "^9.28.0",
+    "neostandard": "^0.12.1"
+  }
+}
