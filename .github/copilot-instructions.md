@@ -1,0 +1,1 @@
+Do not use ; for ending statements in JavaScript.
