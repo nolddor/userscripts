@@ -5,7 +5,7 @@
 // @match         https://steamcommunity.com/profiles/*
 // @match         https://steamcommunity.com/id/*
 // @grant         none
-// @version       1.1.2
+// @version       1.1.3
 // @author        Jack Nolddor
 // @description   Steam: Adds reputation links to user profiles for SteamTrades, Backpack.tf, and CSGORep.
 // @license       MIT
@@ -40,13 +40,9 @@ function GetPlayerStatusPanel () {
   return document.querySelector('.responsive_status_info')
 }
 
-function GetBadgeInfoPanel () {
-  return document.querySelector('.profile_header_badgeinfo')
-}
-
 function RenderReputationPanel (steamid) {
   const template = `
-  <div>
+  <div class="profile_count_link_preview_ctn">
     <div class="profile_count_link ellipsis">
       <a href="#">
         <span class="count_link_label">Reputation</span>
@@ -81,8 +77,10 @@ function RenderReputationPanel (steamid) {
 
 function RenderSteamIDPanel (steamid) {
   const template = `
-  <div style="margin-top: 5px;">
-    <center>ID: {{steamid}}</center>
+  <div class="profile_count_link_preview_ctn">
+    <div class="profile_count_link ellipsis">
+        <span class="count_link_label">SteamID:</span> <span class="count_link_label">{{steamid}}</span>
+    </div>
   </div>
   `
   const raw = TemplateUtils.render(template, { steamid })
@@ -100,10 +98,6 @@ function RenderSteamIDPanel (steamid) {
   const playerStatusPanel = GetPlayerStatusPanel()
   if (playerStatusPanel) {
     playerStatusPanel.after(RenderReputationPanel(steamid))
-  }
-
-  const badgeInfoPanel = GetBadgeInfoPanel()
-  if (badgeInfoPanel) {
-    badgeInfoPanel.after(RenderSteamIDPanel(steamid))
+    playerStatusPanel.after(RenderSteamIDPanel(steamid))
   }
 })()
