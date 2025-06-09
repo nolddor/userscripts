@@ -5,7 +5,7 @@
 // @match         https://steamcommunity.com/profiles/*
 // @match         https://steamcommunity.com/id/*
 // @grant         none
-// @version       1.0.1
+// @version       1.1.0
 // @author        Jack Nolddor
 // @description   Steam: Adds reputation links to user profiles for SteamTrades, Backpack.tf, and CSGORep.
 // @license       MIT
@@ -38,6 +38,10 @@ function GetSteamID () {
 
 function GetPlayerStatusPanel () {
   return document.querySelector('.responsive_status_info')
+}
+
+function GetBadgeInfoPanel () {
+  return document.querySelector('.profile_header_badgeinfo')
 }
 
 function RenderReputationPanel (steamid) {
@@ -75,6 +79,14 @@ function RenderReputationPanel (steamid) {
   return HTMLUtils.parse(raw)
 }
 
+function RenderSteamIDPanel (steamid) {
+  const template = `
+  <div>ID: {{steamid}}</div>
+  `
+  const raw = TemplateUtils.render(template, { steamid })
+  return HTMLUtils.parse(raw)
+}
+
 // Main
 (function () {
   const steamid = GetSteamID()
@@ -86,5 +98,10 @@ function RenderReputationPanel (steamid) {
   const playerStatusPanel = GetPlayerStatusPanel()
   if (playerStatusPanel) {
     playerStatusPanel.after(RenderReputationPanel(steamid))
+  }
+
+  const badgeInfoPanel = GetBadgeInfoPanel()
+  if (badgeInfoPanel) {
+    badgeInfoPanel.after(RenderSteamIDPanel(steamid))
   }
 })()
