@@ -5,7 +5,7 @@
 // @match         https://steamcommunity.com/profiles/*
 // @match         https://steamcommunity.com/id/*
 // @grant         none
-// @version       1.0.0
+// @version       1.0.1
 // @author        Jack Nolddor
 // @description   Steam: Adds reputation links to user profiles for SteamTrades, Backpack.tf, and CSGORep.
 // @license       MIT
