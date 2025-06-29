@@ -5,7 +5,7 @@
 // @match         https://steamcommunity.com/profiles/*
 // @match         https://steamcommunity.com/id/*
 // @exclude       https://steamcommunity.com/profiles/*/*
-// @exclude         https://steamcommunity.com/id/*/*
+// @exclude       https://steamcommunity.com/id/*/*
 // @grant         unsafeWindow
 // @version       1.1.6
 // @author        Jack Nolddor
