@@ -19,6 +19,6 @@
   "homepage": "https://github.com/nolddor/userscripts#readme",
   "devDependencies": {
     "eslint": "10.0.2",
-    "neostandard": "0.12.2"
+    "neostandard": "0.13.0"
   }
 }
