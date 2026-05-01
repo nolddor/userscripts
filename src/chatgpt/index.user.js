@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name          ChatGPT: Dismiss No-Auth Modal Window
+// @name          ChatGPT: Dismiss Annoying Modal Windows
 // @icon          https://chatgpt.com/favicon.ico
 // @namespace     https://github.com/nolddor
 // @match         https://chatgpt.com/*
-// @grant         none
-// @version       1.1.2
+// @grant         GM_addStyle
+// @version       1.2.0
 // @author        Jack Nolddor
-// @description   Dismiss modal window that appears when you try to use ChatGPT without being logged in.
+// @description   Dismiss modal windows that appear when you try to use ChatGPT without being logged in.
 // @license       MIT
 // @run-at        document-start
 // @updateURL     https://raw.githubusercontent.com/nolddor/userscripts/main/src/chatgpt/index.user.js
@@ -14,10 +14,9 @@
 // ==/UserScript==
 
 (function () {
-  if (!sessionStorage) {
-    console.warn('sessionStorage is not available.')
-    return
-  }
-  sessionStorage.setItem('oai/apps/noAuthHasDismissedSoftRateLimitModal', true)
-  sessionStorage.setItem('has-dismissed-welcome-back-modal', true)
+  GM_addStyle(`
+    #credential_picker_container:has(iframe[src*="accounts.google.com"]) {
+      display: none;
+    }
+  `)
 })()
