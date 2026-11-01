@@ -8,8 +8,8 @@
 // @match        https://www.loaded.com/es_es/downloadable/download/link/id/*
 // @match        https://www.loaded.com/downloadable/download/link/id/*
 // @grant        none
-// @updateURL     https://raw.githubusercontent.com/nolddor/userscripts/main/src/loaded/index.user.js
-// @downloadURL   https://raw.githubusercontent.com/nolddor/userscripts/main/src/loaded/index.user.js
+// @updateURL     https://github.com/nolddor/userscripts/raw/refs/heads/main/src/loaded/index.user.js
+// @downloadURL   https://github.com/nolddor/userscripts/raw/refs/heads/main/src/loaded/index.user.js
 // ==/UserScript==
 
 (function () {
