@@ -2,7 +2,7 @@
 // @name         Loaded.com Order Backup
 // @icon         https://cdn.loaded.com/media/favicon/default/loaded_fav.png
 // @namespace    nolddor
-// @version      1.0
+// @version      1.1
 // @description  Backup order details to clipboard
 // @author       Jack Nolddor
 // @match        https://www.loaded.com/es_es/downloadable/download/link/id/*
@@ -31,7 +31,7 @@
     item.querySelectorAll('.key-group span').forEach(s => {
       const t = s.textContent.trim()
       if (/^[A-Z0-9-]+$/.test(t)) {
-        codes.push(t)
+        codes.push(t.replaceAll('-',''))
       }
     })
 
