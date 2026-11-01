@@ -31,7 +31,7 @@
     item.querySelectorAll('.key-group span').forEach(s => {
       const t = s.textContent.trim()
       if (/^[A-Z0-9-]+$/.test(t)) {
-        codes.push(t.replaceAll('-',''))
+        codes.push(t.replaceAll('-', ''))
       }
     })
 
