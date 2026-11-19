@@ -2,14 +2,14 @@
 // @name         Loaded.com Order Backup
 // @icon         https://cdn.loaded.com/media/favicon/default/loaded_fav.png
 // @namespace    nolddor
-// @version      1.1
+// @version      1.2
 // @description  Backup order details to clipboard
 // @author       Jack Nolddor
 // @match        https://www.loaded.com/es_es/downloadable/download/link/id/*
 // @match        https://www.loaded.com/downloadable/download/link/id/*
 // @grant        none
-// @updateURL     https://github.com/nolddor/userscripts/raw/refs/heads/main/src/loaded/index.user.js
-// @downloadURL   https://github.com/nolddor/userscripts/raw/refs/heads/main/src/loaded/index.user.js
+// @updateURL     https://raw.githubusercontent.com/nolddor/userscripts/main/src/loaded/index.user.js
+// @downloadURL   https://raw.githubusercontent.com/nolddor/userscripts/main/src/loaded/index.user.js
 // ==/UserScript==
 
 (function () {
@@ -31,7 +31,7 @@
     item.querySelectorAll('.key-group span').forEach(s => {
       const t = s.textContent.trim()
       if (/^[A-Z0-9-]+$/.test(t)) {
-        codes.push(t.replaceAll('-', ''))
+        codes.push(t)
       }
     })
 
@@ -48,7 +48,7 @@
       platform: details['Platform'] || '',
       region: details['Region'] || '',
       qty: details['Qty'] || '',
-      codes: codes.join('\n - ')
+      codes: codes.join('\n')
     }
   }
 
@@ -137,7 +137,7 @@
           md += `Qty: ${game.qty}\n`
           md += '\n'
           md += 'Your game code is:\n'
-          md += ` - ${game.codes}\n`
+          md += `${game.codes}\n`
           md += '```'
 
           navigator.clipboard.writeText(md).then(() => {
